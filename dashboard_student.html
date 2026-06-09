@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="dashboard_student.css">
+</head>
+<body>
+<div class="navbar">
+    <div>Student Dashboard</div>
+    <div>
+        Welcome, <?php echo $_SESSION['name']; ?> |
+        <a href="../auth/logout.php">Logout</a>
+    </div>
+</div>
+<div class="container">
+    <div class="card">
+        <h3>My Attendance</h3>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+            <?php
+            $sql = "SELECT attendances.attendances_date, attendances.status
+                    FROM attendances
+                    JOIN students ON attendances.student_id = students.student_id
+                    WHERE students.user_id = '$user_id'
+                    ORDER BY attendances.attendances_date DESC";
+            $result = $conn->query($sql);
+            while($row = $result->fetch_assoc()){
+            ?>
+            <tr>
+                <td><?php echo $row['attendances_date']; ?></td>
+                <td><?php echo ucfirst($row['status']); ?></td>
+            </tr>
+            <?php } ?>
+        </table>
+    </div>
+</div>
+<footer>
+Student Attendance Management System © 2026
+</footer>
+</body>
+</html>

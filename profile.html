@@ -1,0 +1,28 @@
+<! DOCTYPE html>
+<html>
+    <head>
+        <title>my profile</title>
+    </head>
+     <body>
+        <h2>My Profile</h2>
+        <p><strong>Name:</strong> <?php echo $student['name']; ?></p>
+        <p><strong>Email:</strong> <?php echo $student['email']; ?></p>
+        <p><strong>Registration Number:</strong> <?php echo $student['reg_no']; ?></p>
+        <p><strong>Class:</strong> <?php echo $student['class']; ?></p> 
+
+        
+        <h3>
+        Attendance Percentage:
+        <?php echo round($percentage,2); ?>%
+        </h3>
+
+
+        <div style="border:1px solid #ccc;padding:15px;margin-top:20px;">
+        <h3>Attendance Summary</h3>
+        <p>Total Records: <?php echo $total; ?></p>
+        <p>Present Days: <?php echo $present; ?></p>
+        <p>Absent Days: <?php echo $total - $present; ?></p>
+        <p>Percentage: <?php echo round($percentage,2); ?>%</p>
+        </div>
+    </body>
+</html>
