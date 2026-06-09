@@ -1,5 +1,4 @@
-# Attendance-management
-Students management system
+
 # Student Attendance Management System
 
 A web-based Student Attendance Management System developed using PHP, MySQL, HTML, CSS, and JavaScript. The system helps administrators manage students and track attendance records efficiently.
