@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Report</title>
+    <link rel="stylesheet" href="attendance_report.css">
+</head>
+<body>
+    <div class="navbar">
+    <h2>Attendance System</h2>
+    <div class="menu">
+        <a href="dashboard.php">Dashboard</a>
+        <a href="manage_students.php">Students</a>
+        <a href="manage_attendance.php">Attendance</a>
+        <a href="attendance_report.php">Reports</a>
+        <a href="../auth/logout.php">Logout</a>
+    </div>
+</div>
+<div class="container">
+<form method="GET" style="margin-bottom:20px;">
+<input type="attendances_date" name="attendances_date" required>
+<button type="submit">Filter</button>
+</form>
+<h2>Attendance Report </h2>
+<table border="1" width="100%" cellpadding="10">
+    <tr>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Status</th>
+    </tr>
+<?php while($row = $attendances->fetch_assoc()){ ?>
+    <tr>
+        <td><?php echo $row['name']; ?></td>
+        <td><?php echo $row['attendances_date']; ?></td>
+        <td><?php echo $row['status']; ?></td>
+    </tr>
+<?php } ?>
+</table>
+</div>
+<footer>
+Student Attendance Management System © 2026
+</footer>
+</body>
+</html>

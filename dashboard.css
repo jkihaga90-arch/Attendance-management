@@ -1,0 +1,49 @@
+ body{
+            margin:0;
+            font-family:Arial;
+            background:#f4f4f4;
+        }
+
+        .navbar{
+            background:#007bff;
+            color:white;
+            padding:15px 30px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+        .menu a{
+            color:white;
+            text-decoration:none;
+            margin-left:15px;
+            font-weight:bold;
+        }
+        .menu a:hover{
+            text-decoration:underline;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding:20px;
+            margin-bottom: 420px;
+            width: 1000px;
+        }
+        .card{
+            background:white;
+            padding:20px;
+            margin-top:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+        a{
+            color:white;
+            text-decoration:none;
+        }
+        footer{
+        margin-top:30px;
+        text-align:center;
+        padding:15px;
+        background:#222;
+        color:white;
+        }

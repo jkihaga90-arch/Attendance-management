@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Attendance</title>
+    <link rel="stylesheet" href="manage_attendance.css">
+</head>
+<body>
+    <div class="navbar">
+    <h2>Attendance System</h2>
+    <div class="menu">
+        <a href="dashboard.php">Dashboard</a>
+        <a href="manage_students.php">Students</a>
+        <a href="manage_attendance.php">Attendance</a>
+        <a href="attendance_report.php">Reports</a>
+        <a href="../auth/logout.php">Logout</a>
+    </div>
+</div>
+
+<div class="container">
+<h2>Mark Attendance </h2>
+<form method="POST">
+<table>
+    <tr>
+        <th>Student ID</th>
+        <th>Status</th>
+    </tr>
+<?php
+$sql = "SELECT * FROM students";
+$result = $conn->query($sql);
+while($row = $result->fetch_assoc()){
+?>
+<tr>
+    <td><?php echo $row['student_id']; ?></td>
+    <td>
+        <select name="attendances[<?php echo $row['student_id']; ?>]">
+            <option value="present">Present</option>
+            <option value="absent">Absent</option>
+        </select>
+    </td>
+</tr>
+<?php
+}
+ ?>
+</table>
+<button type="submit" name="save">Save attendance</button>
+</form>
+</div>
+<footer>
+Student Attendance Management System © 2026
+</footer>
+</body>
+</html>

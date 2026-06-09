@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+<div class="navbar">
+    <h2>Attendance System</h2>
+    <div class="menu">
+        <a href="dashboard.php">Dashboard</a>
+        <a href="manage_students.php">Students</a>
+        <a href="manage_attendance.php">Attendance</a>
+        <a href="attendance_report.php">Reports</a>
+        <a href="../auth/logout.php">Logout</a>
+    </div>
+</div>
+<div class="container">
+  <div style="display:flex; gap:20px; flex-wrap:wrap; margin-top:20px;">
+    <div style="background:#007bff; color:white; padding:20px; width:200px;
+border-radius:10px;">
+        <h3>Total Students</h3>
+        <h2><?php echo $total_students; ?></h2>
+    </div>
+    <div style="background:#28a745; color:white; padding:20px; width:200px;
+border-radius:10px;">
+        <h3>Present Today</h3>
+        <h2><?php echo $present_today; ?></h2>
+    </div>
+    <div style="background:#dc3545; color:white; padding:20px; width:200px;
+border-radius:10px;">
+        <h3>Absent Today</h3>
+        <h2><?php echo $absent_today; ?></h2>
+    </div>
+  </div>
+</div>
+<div>
+<footer>
+Student Attendance Management System © 2026
+</footer>
+ </div>
+</body>
+</html>
